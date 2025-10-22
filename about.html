@@ -4,93 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>เกี่ยวกับ - ระบบติดตามการทรุดตัวชั้นดิน</title>
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- ฟอนต์ Kanit -->
     <link
       href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <style>
-      body {
-        font-family: "Kanit", sans-serif;
-        margin: 0;
-        /* ต้องเปิดให้ scroll ได้ เนื่องจากเนื้อหามีความยาว */
-        overflow-y: auto;
-        background-color: #f3f4f6; /* เพิ่มพื้นหลังเพื่อให้เข้ากับ index.html */
-      }
 
-      /* Custom Scrollbar Styles for aesthetic */
-      body::-webkit-scrollbar {
-        width: 8px;
-      }
-      body::-webkit-scrollbar-track {
-        background: #e5e7eb;
-        border-radius: 4px;
-      }
-      body::-webkit-scrollbar-thumb {
-        background: #3b82f6;
-        border-radius: 4px;
-      }
-      body::-webkit-scrollbar-thumb:hover {
-        background: #2563eb;
-      }
-
-      .rotate-180 {
-        transform: rotate(180deg);
-      }
-
-      /* ซ่อนเนื้อหา Accordion ตอนเริ่มต้น */
-      .accordion-content {
-        display: none;
-      }
-
-      /* ปรับ Header ให้อยู่ด้านบน */
-      header {
-        position: sticky; /* เปลี่ยนเป็น sticky เพื่อให้ header ติดอยู่ด้านบนเมื่อ scroll */
-        top: 0;
-        z-index: 50;
-      }
-    </style>
+    <!-- CSS แยกไฟล์ -->
+    <link rel="stylesheet" href="css/styleabout.css" />
   </head>
 
   <body>
+    <!-- Header -->
     <header class="bg-blue-800 text-white shadow-lg">
       <div class="container mx-auto px-4 py-4">
         <div class="flex items-center justify-between">
           <div class="flex items-center">
-            <button
-              id="mobileMenuButton"
-              class="md:hidden mr-4 focus:outline-none"
-            >
-              <svg
-                class="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
+            <button id="mobileMenuButton" class="md:hidden mr-4 focus:outline-none">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"/>
               </svg>
             </button>
             <div>
-              <h1 class="text-xl md:text-2xl font-bold">
-                ระบบติดตามการทรุดตัวชั้นดิน
-              </h1>
-              <p class="text-blue-200 text-sm">
-                จังหวัดชลบุรี - Land Subsidence Monitoring System
-              </p>
+              <h1 class="text-xl md:text-2xl font-bold">ระบบติดตามการทรุดตัวชั้นดิน</h1>
+              <p class="text-blue-200 text-sm">จังหวัดชลบุรี - Land Subsidence Monitoring System</p>
             </div>
           </div>
 
           <div class="flex items-center space-x-4">
-            <button
-              id="backButton"
-              class="bg-white text-blue-800 font-semibold py-2 px-4 rounded-md hover:bg-blue-100 transition duration-200"
-              onclick="window.location.href='index.html'"
-            >
+            <button id="backButton"
+              class="bg-white text-blue-800 font-semibold py-2 px-4 rounded-md hover:bg-blue-100 transition duration-200">
               กลับ
             </button>
           </div>
@@ -98,205 +46,116 @@
       </div>
     </header>
 
+    <!-- Main Content -->
     <main class="container mx-auto py-10 px-4 space-y-10 max-w-5xl pb-20">
-      <section
-        class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
-      >
-        <h2 class="text-3xl font-bold text-blue-800 mb-4 text-center">
-          เกี่ยวกับเว็บไซต์นี้
-        </h2>
+      <!-- เกี่ยวกับเว็บไซต์ -->
+      <section class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+        <h2 class="text-3xl font-bold text-blue-800 mb-4 text-center">เกี่ยวกับเว็บไซต์นี้</h2>
         <p class="text-gray-700 text-lg leading-relaxed">
           เว็บไซต์นี้จัดทำขึ้นเพื่อเป็นส่วนหนึ่งของการวิจัยเกี่ยวกับ WebMap
           ในการวิเคราะห์และติดตามการทรุดตัวชั้นดินในจังหวัดชลบุรี
-          โดยนำวิธีการและเทคนิคจากซอฟต์แวร์
-          <strong>LiCSBAS2</strong> ซึ่งเป็นซอฟต์แวร์วิเคราะห์ข้อมูลแบบ time
-          series ของ InSAR ข้อมูลที่ใช้ได้มาจาก
-          <strong>COMET-LiCS Portal</strong>
+          โดยนำวิธีการและเทคนิคจากซอฟต์แวร์ <strong>LiCSBAS2</strong>
+          ซึ่งเป็นซอฟต์แวร์วิเคราะห์ข้อมูลแบบ time series ของ InSAR
+          ข้อมูลที่ใช้ได้มาจาก <strong>COMET-LiCS Portal</strong>
         </p>
       </section>
 
-      <section
-        class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
-      >
-        <h2 class="text-3xl font-bold text-blue-800 mb-6 text-center">
-          วิธีการดำเนินงาน
-        </h2>
+      <!-- วิธีการดำเนินงาน (Accordion) -->
+      <section class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+        <h2 class="text-3xl font-bold text-blue-800 mb-6 text-center">วิธีการดำเนินงาน</h2>
 
         <div class="space-y-2">
+          <!-- ขั้นตอน 1 -->
           <div class="border-b">
-            <button
-              class="w-full text-left py-3 px-4 font-semibold text-blue-700 flex justify-between items-center accordion-btn"
-            >
+            <button class="w-full text-left py-3 px-4 font-semibold text-blue-700 flex justify-between items-center accordion-btn">
               1. การดาวน์โหลดและเตรียมข้อมูล
-              <span
-                class="transform rotate-180 transition-transform duration-200"
-                >▲</span
-              >
+              <span class="transform rotate-180 transition-transform duration-200">▲</span>
             </button>
-            <div
-              class="px-4 pb-4 text-gray-700 leading-relaxed accordion-content show-content"
-            >
+            <div class="px-4 pb-4 text-gray-700 leading-relaxed accordion-content show-content">
               เริ่มต้นด้วยการดาวน์โหลดข้อมูล InSAR จาก COMET-LiCS Portal โดยใช้
               Frame ID: <strong>172A_07686_131012</strong>
-              ซึ่งประกอบด้วย interferograms และ coherence maps ที่ประมวลผลโดย
-              LiCSAR processor หลังจากนั้นใช้สคริปต์ Python จาก LiCSAR Web Tools
-              เพื่อดึงข้อมูลลงมาในเครื่องอย่างเป็นระบบ
+              ซึ่งประกอบด้วย interferograms และ coherence maps ที่ประมวลผลโดย LiCSAR processor
+              หลังจากนั้นใช้สคริปต์ Python จาก LiCSAR Web Tools เพื่อดึงข้อมูลลงมาในเครื่องอย่างเป็นระบบ
             </div>
           </div>
 
+          <!-- ขั้นตอน 2 -->
           <div class="border-b">
-            <button
-              class="w-full text-left py-3 px-4 font-semibold text-blue-700 flex justify-between items-center accordion-btn"
-            >
+            <button class="w-full text-left py-3 px-4 font-semibold text-blue-700 flex justify-between items-center accordion-btn">
               2. ติดตั้งและรัน LiCSBAS2
-              <span
-                class="transform rotate-180 transition-transform duration-200"
-                >▲</span
-              >
+              <span class="transform rotate-180 transition-transform duration-200">▲</span>
             </button>
-            <div
-              class="px-4 pb-4 text-gray-700 leading-relaxed accordion-content show-content space-y-3"
-            >
+            <div class="px-4 pb-4 text-gray-700 leading-relaxed accordion-content show-content space-y-3">
               <p>
                 clone LiCSBAS2 จาก GitHub โดยใช้คำสั่ง:
-                <code>git clone https://github.com/yumorishita/LiCSBAS2</code
-                ><br />
-                ต่อมาใช้ไฟล์สคริปต์
-                <code>batch_LiCSBAS.sh</code> เพื่อรันกระบวนการวิเคราะห์ทั้งหมด
-                ซึ่งประกอบด้วยขั้นตอนต่าง ๆ ตั้งแต่ <strong>01 ถึง 16</strong>
-                ดังนี้:
+                <code>git clone https://github.com/yumorishita/LiCSBAS2</code><br />
+                ต่อมาใช้ไฟล์สคริปต์ <code>batch_LiCSBAS.sh</code> เพื่อรันกระบวนการวิเคราะห์ทั้งหมด
+                ซึ่งประกอบด้วยขั้นตอนต่าง ๆ ตั้งแต่ <strong>01 ถึง 16</strong> ดังนี้:
               </p>
 
               <ul class="list-decimal list-inside space-y-1">
-                <li>
-                  <strong>ขั้นตอน 01:</strong> LiCSBAS01_get_geotiff*.py -
-                  ดึงข้อมูล GeoTIFF จากแหล่งข้อมูล (ในที่นี้ใช้ COMET_S1
-                  เป็นแหล่งข้อมูลเริ่มต้น).
-                </li>
-                <li>
-                  <strong>ขั้นตอน 02:</strong> LiCSBAS02_ml_prep.py -
-                  เตรียมข้อมูลโดยการ multilook เพื่อลดความซับซ้อน .
-                </li>
-                <li>
-                  <strong>ขั้นตอน 04 :</strong> LiCSBAS04op_mask_unw.py -
-                  กรองข้อมูล unwrapped interferograms.
-                </li>
-                <li>
-                  <strong>ขั้นตอน 05 :</strong> LiCSBAS05op_clip_unw.py -
-                  ตัดข้อมูลตามช่วงที่กำหนด .
-                </li>
-                <li>
-                  <strong>ขั้นตอน 11:</strong> LiCSBAS11_check_unw.py -
-                  ตรวจสอบคุณภาพของข้อมูล unwrapped.
-                </li>
-                <li>
-                  <strong>ขั้นตอน 12:</strong> LiCSBAS12_loop_closure.py - loop
-                  closure เพื่อตรวจสอบความถูกต้อง.
-                </li>
-                <li>
-                  <strong>ขั้นตอน 13:</strong> LiCSBAS13_sb_inv.py -
-                  คำนวณการเคลื่อนที่แบบ time series โดยใช้ Small Baseline
-                  Inversion.
-                </li>
-                <li>
-                  <strong>ขั้นตอน 14:</strong> LiCSBAS14_vel_std.py -
-                  คำนวณความเร็วและความแปรปรวนของการเคลื่อนที่.
-                </li>
-                <li>
-                  <strong>ขั้นตอน 15:</strong> LiCSBAS15_mask_ts.py - กรองข้อมูล
-                  time series ที่มีข้อผิดพลาด.
-                </li>
-                <li>
-                  <strong>ขั้นตอน 16:</strong> LiCSBAS16_filt_ts.py -
-                  กรองข้อมูลเพื่อลด noise.
-                </li>
+                <li><strong>ขั้นตอน 01:</strong> LiCSBAS01_get_geotiff*.py - ดึงข้อมูล GeoTIFF จากแหล่งข้อมูล (COMET_S1)</li>
+                <li><strong>ขั้นตอน 02:</strong> LiCSBAS02_ml_prep.py - เตรียมข้อมูลโดยการ multilook เพื่อลดความซับซ้อน</li>
+                <li><strong>ขั้นตอน 04:</strong> LiCSBAS04op_mask_unw.py - กรองข้อมูล unwrapped interferograms</li>
+                <li><strong>ขั้นตอน 05:</strong> LiCSBAS05op_clip_unw.py - ตัดข้อมูลตามช่วงที่กำหนด</li>
+                <li><strong>ขั้นตอน 11:</strong> LiCSBAS11_check_unw.py - ตรวจสอบคุณภาพของข้อมูล unwrapped</li>
+                <li><strong>ขั้นตอน 12:</strong> LiCSBAS12_loop_closure.py - loop closure เพื่อตรวจสอบความถูกต้อง</li>
+                <li><strong>ขั้นตอน 13:</strong> LiCSBAS13_sb_inv.py - คำนวณการเคลื่อนที่แบบ time series โดยใช้ Small Baseline Inversion</li>
+                <li><strong>ขั้นตอน 14:</strong> LiCSBAS14_vel_std.py - คำนวณความเร็วและความแปรปรวนของการเคลื่อนที่</li>
+                <li><strong>ขั้นตอน 15:</strong> LiCSBAS15_mask_ts.py - กรองข้อมูล time series ที่มีข้อผิดพลาด</li>
+                <li><strong>ขั้นตอน 16:</strong> LiCSBAS16_filt_ts.py - กรองข้อมูลเพื่อลด noise</li>
               </ul>
             </div>
           </div>
 
+          <!-- ขั้นตอน 3 -->
           <div class="border-b">
-            <button
-              class="w-full text-left py-3 px-4 font-semibold text-blue-700 flex justify-between items-center accordion-btn"
-            >
+            <button class="w-full text-left py-3 px-4 font-semibold text-blue-700 flex justify-between items-center accordion-btn">
               3. การประมวลผลข้อมูล
-              <span
-                class="transform rotate-180 transition-transform duration-200"
-                >▲</span
-              >
+              <span class="transform rotate-180 transition-transform duration-200">▲</span>
             </button>
-            <div
-              class="px-4 pb-4 text-gray-700 leading-relaxed accordion-content show-content"
-            >
+            <div class="px-4 pb-4 text-gray-700 leading-relaxed accordion-content show-content">
               หลังจากรัน <code>batch_LiCSBAS.sh</code> ระบบจะสร้างไฟล์
-              <code>Cum_filt.h5</code>
-              ซึ่งเก็บข้อมูลการทรุดตัวที่ผ่านการกรองสัญญาณรบกวนแล้ว จากนั้นใช้
-              Python เพื่ออ่านและแปลงเป็น GeoTIFF
-              แยกตามช่วงเวลาเพื่อนำไปแสดงผลบน Web Map
+              <code>Cum_filt.h5</code> ซึ่งเก็บข้อมูลการทรุดตัวที่ผ่านการกรองสัญญาณรบกวนแล้ว
+              จากนั้นใช้ Python เพื่ออ่านและแปลงเป็น GeoTIFF แยกตามช่วงเวลาเพื่อนำไปแสดงผลบน Web Map
             </div>
           </div>
 
+          <!-- ขั้นตอน 4 -->
           <div class="border-b">
-            <button
-              class="w-full text-left py-3 px-4 font-semibold text-blue-700 flex justify-between items-center accordion-btn"
-            >
+            <button class="w-full text-left py-3 px-4 font-semibold text-blue-700 flex justify-between items-center accordion-btn">
               4. ข้อมูลอ้างอิง
-              <span
-                class="transform rotate-180 transition-transform duration-200"
-                >▲</span
-              >
+              <span class="transform rotate-180 transition-transform duration-200">▲</span>
             </button>
-            <div
-              class="px-4 pb-4 text-gray-700 leading-relaxed accordion-content show-content"
-            >
+            <div class="px-4 pb-4 text-gray-700 leading-relaxed accordion-content show-content">
               แหล่งข้อมูล: COMET-LiCS Portal (Frame ID: 172A_07686_131012)<br />
               เครื่องมือ: LiCSBAS2 จาก GitHub<br />
-              การอ้างอิง: Morishita et al. (2020, 2021, 2023), Lazecký et al.
-              (2020)
+              การอ้างอิง: Morishita et al. (2020, 2021, 2023), Lazecký et al. (2020)
             </div>
           </div>
         </div>
       </section>
 
-      <section
-        class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
-      >
-        <h2 class="text-3xl font-bold text-blue-800 mb-8 text-center">
-          ผู้จัดทำ
-        </h2>
+      <!-- ผู้จัดทำ -->
+      <section class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+        <h2 class="text-3xl font-bold text-blue-800 mb-8 text-center">ผู้จัดทำ</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <div
-            class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 text-center"
-          >
-            <img
-              src="/images/Ryu.jpg"
-              alt="Ratchanon Image"
-              class="w-48 h-48 mx-auto rounded-full object-cover border-4 border-blue-200 mb-4"
-            />
-            <p class="text-xl font-semibold text-blue-700">
-              นาย รัชชานนท์ อินกันหา
-            </p>
+          <!-- ผู้จัดทำ 1 -->
+          <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
+            <img src="/images/Ryu.jpg" alt="Ratchanon Image"
+              class="w-48 h-48 mx-auto rounded-full object-cover border-4 border-blue-200 mb-4" />
+            <p class="text-xl font-semibold text-blue-700">นาย รัชชานนท์ อินกันหา</p>
             <p class="text-gray-600">รหัสนักศึกษา: 653380070-1</p>
             <p class="text-gray-600">Email: Ratchanon.i@kkumail.com</p>
           </div>
 
-          <div
-            class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 text-center"
-          >
-            <!-- วงกลมพื้นหลังน้ำเงิน + รูป -->
-            <div
-              class="w-48 h-48 mx-auto rounded-full flex items-center justify-center border-4 border-blue-200 mb-4"
-            >
-              <img
-                src="/Images/TT.jpg"
-                alt="Lalita Image"
-                class="w-44 h-44 rounded-full object-contain object-center"
-              />
+          <!-- ผู้จัดทำ 2 -->
+          <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
+            <div class="w-48 h-48 mx-auto rounded-full flex items-center justify-center border-4 border-blue-200 mb-4">
+              <img src="/Images/TT.jpg" alt="Lalita Image"
+                class="w-44 h-44 rounded-full object-contain object-center" />
             </div>
-
-            <!-- ข้อความ -->
-            <p class="text-xl font-semibold text-blue-700">
-              นางสาว ลลิตา อุปวันดี
-            </p>
+            <p class="text-xl font-semibold text-blue-700">นางสาว ลลิตา อุปวันดี</p>
             <p class="text-gray-600">รหัสนักศึกษา: 653380234-7</p>
             <p class="text-gray-600">Email: Lalita.u@kkumail.com</p>
           </div>
@@ -304,36 +163,7 @@
       </section>
     </main>
 
-    <script>
-      // ฟังก์ชันสำหรับปุ่ม "กลับ"
-      document.getElementById("backButton").addEventListener("click", () => {
-        window.location.href = "index.html";
-      });
-
-      // ฟังก์ชัน Accordion
-      const buttons = document.querySelectorAll(".accordion-btn");
-      buttons.forEach((btn) => {
-        const content = btn.nextElementSibling;
-        const icon = btn.querySelector("span");
-
-        // ตรวจสอบว่าควรเปิดหรือปิดตอนเริ่ม
-        // content.classList.add('hidden'); // สามารถเปิดใช้งานถ้าต้องการปิดทั้งหมดตอนเริ่มต้น
-
-        // ถ้าต้องการให้เริ่มต้นด้วยการเปิดทุกอัน
-        content.style.display = "block";
-        icon.classList.remove("rotate-180"); // ปรับ icon ให้ตรงกับสถานะเปิด
-
-        btn.addEventListener("click", () => {
-          // Toggle display
-          if (content.style.display === "block") {
-            content.style.display = "none";
-            icon.classList.add("rotate-180"); // หมุนเมื่อปิด
-          } else {
-            content.style.display = "block";
-            icon.classList.remove("rotate-180"); // ไม่หมุนเมื่อเปิด
-          }
-        });
-      });
-    </script>
+    <!-- JS -->
+    <script src="js/scriptabout.js"></script>
   </body>
 </html>
